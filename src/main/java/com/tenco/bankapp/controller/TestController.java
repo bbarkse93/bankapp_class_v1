@@ -1,4 +1,4 @@
-package com.tenco.bankapp;
+package com.tenco.bankapp.controller;
 
 import org.springframework.stereotype.Controller;
 
