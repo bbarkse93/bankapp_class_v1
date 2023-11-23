@@ -16,4 +16,11 @@ public class TestController {
 	public String tempTest() {
 		return "temp";  
 	}
+	
+	// 주소설계 - http://localhost:80/temp/main-page
+	@GetMapping("/main-page")
+	public String tempMainPage() {
+		return "main";
+	}
+	
 }
