@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.tenco.bankapp.dto.SignInFormDTO;
 import com.tenco.bankapp.repository.entity.User;
 
 @Mapper
@@ -19,4 +20,7 @@ public interface UserRepository {
 	public User findById(Integer id);
 	// 사용자 전체 조회
 	public List<User> findAll();
+	// 로그인 (사용자 이름과 비밀번호로 조회)
+	public User findByUsernameAndPassword(SignInFormDTO dto);
+	
 }

@@ -1,5 +1,6 @@
 package com.tenco.bankapp.service;
 
+import com.tenco.bankapp.dto.SignInFormDTO;
 import com.tenco.bankapp.dto.SignUpFormDTO;
 import com.tenco.bankapp.handler.exception.CustomRestfulException;
 import com.tenco.bankapp.repository.entity.User;
@@ -29,4 +30,17 @@ public class UserService {
         
         return resultRowCount;
     }
+
+    
+	public User signIn(SignInFormDTO dto) {
+		
+		User userEntity = userRepository.findByUsernameAndPassword(dto);
+		
+		if(userEntity == null) {
+			throw new CustomRestfulException("아이디 혹은 비밀번호가 틀렸습니다", HttpStatus.BAD_REQUEST);
+		}
+		
+		return userEntity;
+	}
+	
 }
