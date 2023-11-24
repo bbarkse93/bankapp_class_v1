@@ -14,6 +14,7 @@ import com.tenco.bankapp.dto.SignUpFormDTO;
 import com.tenco.bankapp.handler.exception.CustomRestfulException;
 import com.tenco.bankapp.repository.entity.User;
 import com.tenco.bankapp.service.UserService;
+import com.tenco.bankapp.utils.Define;
 
 @Controller
 @RequestMapping("/user")
@@ -23,7 +24,7 @@ public class UserController {
 	private UserService userService;
 
 	@Autowired
-	private HttpSession httpSession;
+	private HttpSession session;
 	
 	// 회원가입 페이지 요청
 	// http://localhost:80/user/sign-up
@@ -78,12 +79,16 @@ public class UserController {
 		
 		// 2. 서비스 호출
 		User principal = userService.signIn(dto);
-		httpSession.setAttribute("principal", principal); // 세션 메모리에 사용자 정보를 저장
-		
-		System.out.println("principal" + principal.toString());
+		session.setAttribute(Define.PRINCIPAL, principal); // 세션 메모리에 사용자 정보를 저장
 		
 		return "/account/list";
 	}
 	
+	@GetMapping("/logout")
+	public String logout() {
+		session.invalidate();
+		
+		return "redirect:/user/sign-in";
+	}
 	
 }

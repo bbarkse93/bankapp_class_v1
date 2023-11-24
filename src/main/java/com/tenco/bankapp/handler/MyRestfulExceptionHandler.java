@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.tenco.bankapp.handler.exception.CustomRestfulException;
+import com.tenco.bankapp.handler.exception.UnAuthorizedException;
 
 /**
  * 예외 발생시 데이터를 내려줄 수 있다.
@@ -28,6 +29,16 @@ public class MyRestfulExceptionHandler {
 		sb.append("<script>");
 		sb.append("alert( `" + e.getMessage() + "`);");
 		sb.append("history.back();");
+		sb.append("</script>");		
+		return sb.toString();
+	}
+	
+	@ExceptionHandler(UnAuthorizedException.class)
+	public String unAuthorizedException(UnAuthorizedException e) {
+		StringBuffer sb = new StringBuffer();
+		sb.append("<script>");
+		sb.append("alert( `" + e.getMessage() + "`);");
+		sb.append("location.href='/user/sign-in';");
 		sb.append("</script>");		
 		return sb.toString();
 	}
