@@ -3,7 +3,30 @@
 <%@ include file="/WEB-INF/view/layout/header.jsp" %>
 
 <div class="col-sm-8">
-	<h1>여기는 account/list입니다.</h1>
+	<h2>나의 계좌목록</h2>
+	<h5>어서오세요</h5>
+	<div class="bg-light p-md-5 h-75">
+	  <table class="table">
+	  	  <thead>
+	  	  	<tr>
+	  	  		<th>계좌 번호</th>
+	  	  		<th>잔액</th>
+	  	  	</tr>
+	  	  </thead>
+	  	  	<tbody>
+	  	  		<tr>
+	  	  		<td>1111</td>
+	  	  		<td>1300</td>
+	  	  		</tr>
+	  	  </tbody>
+	  	  	<tbody>
+	  	  		<tr>
+	  	  		<td>2222</td>
+	  	  		<td>1100</td>
+	  	  		</tr>
+	  	  </tbody>
+	  </table>
+	</div>
 	
 	
 </div>
