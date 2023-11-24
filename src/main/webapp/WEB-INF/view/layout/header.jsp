@@ -34,10 +34,10 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/sign-in">SignIn</a>
+        <a class="nav-link" href="/user/sign-in">SignIn</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/sign-up">SignUp</a>
+        <a class="nav-link" href="/user/sign-up">SignUp</a>
       </li>    
     </ul>
   </div>  
@@ -54,7 +54,7 @@
       <p>Lorem ipsum dolor sit ame.</p>
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="/account/save">계좌 생성</a>
+          <a class="nav-link" href="/account/save">계좌 생성</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/account/list">계좌 목록</a>
